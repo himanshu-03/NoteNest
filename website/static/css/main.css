@@ -5,7 +5,9 @@
 	box-sizing: border-box;
 }
 body{
-	background: #202124;
+	background-image: url('../images/bg.png');
+	background-size: cover;
+	background-position: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -74,7 +76,7 @@ input{
 	background: #eee;
 	border: none;
 	text-decoration: none;
-	width: 100%;
+	width: 300px;
 	margin: 8px 0;
 	padding: 12px 15px;
 }
