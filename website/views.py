@@ -47,7 +47,7 @@ def edit_note(note_id):
         else:
             flash('Note is too short!', category='error')
 
-    return render_template("edit_note.html",user=current_user, note=note)  # Render edit note template
+    return render_template("home.html",user=current_user, note=note)  # Render edit note template
 
 
 @views.route('/delete-note', methods=['POST'])

@@ -28,7 +28,8 @@
             <div class="form-group">
                 <input type="password" id="password2" name="password2" placeholder="Enter your password again">
             </div>
-            <button>Sign Up</button>
+            <br />
+            <button class="btn">Sign Up</button>
             <br>
             {% if error %}
             <div class="error-message">{{ error }}</div>
@@ -42,7 +43,8 @@
             <br><br>
             <input type="email" id="email" name="email" placeholder="Email">
             <input type="password" id="name" name="password" placeholder="Password">
-            <button type="submit">Sign In</button>
+            <br /><br />
+            <button class="btn" type="submit">Sign In</button>
             <br>
             {% if error %}
             <div class="error-message">{{ error }}</div>
@@ -55,12 +57,12 @@
             <div class="panel overlay-left">
                 <h1>Welcome To<br>NoteNest</h1>
                 <p>Please Subscribe</p>
-                <button class="press" id="signIn">Sign In</button>
+                <button class="btn" id="signIn">Sign In</button>
             </div>
             <div class="panel overlay-right">
                 <h1>NoteNest</h1>
                 <p>One stop destination for your notes!</p>
-                <button class="press" id="signUp">Sign Up</button>
+                <button class="btn" id="signUp">Sign Up</button>
             </div>
         </div>
     </div>
