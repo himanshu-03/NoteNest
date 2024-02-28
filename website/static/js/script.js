@@ -9,3 +9,15 @@ const signUpButton = document.getElementById("signUp");
 		signInButton.addEventListener('click',()=>{
 			container.classList.remove("right-panel-active");
 		})
+
+document.getElementById('signUp').addEventListener('click', function() {
+
+	document.querySelector('.signin').style.display = 'none';
+	
+	document.querySelector('.signup').style.display = 'block';
+});
+
+document.getElementById('signIn').addEventListener('click', function() {
+
+	document.querySelector('.signin').style.display = 'block';
+});

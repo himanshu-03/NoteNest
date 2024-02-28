@@ -9,8 +9,10 @@
 </head>
 <body>
 
+<h1 class="logo">NoteNest</h1>
+
 <div class="container" id="container">
-    <div class="form signup">
+    <div class="form signup" id="signup">
         <form action="{{ url_for('auth.sign_up') }}" method="POST">
             <h1>Create Account</h1>
             <br><br>
@@ -28,14 +30,13 @@
             </div>
             <button>Sign Up</button>
             <br>
-
             {% if error %}
             <div class="error-message">{{ error }}</div>
             {% endif %}
         </form>
     </div>
 
-    <div class="form signin">
+    <div class="form signin" id="signin">
         <form action="{{ url_for('auth.login') }}" method="POST">
             <h1>Sign In</h1>
             <br><br>
@@ -43,7 +44,6 @@
             <input type="password" id="name" name="password" placeholder="Password">
             <button type="submit">Sign In</button>
             <br>
-
             {% if error %}
             <div class="error-message">{{ error }}</div>
             {% endif %}

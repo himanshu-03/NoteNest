@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
+from flask import redirect, url_for
 from .models import Note
 from . import db
 import json
@@ -21,10 +22,33 @@ def home():
             db.session.add(new_note)
             db.session.commit()
             flash('Note added!', category='success')
+            return redirect(url_for('views.home'))
         else:
             flash('Note is too short!', category='error')
 
     return render_template("home.html", user=current_user)
+
+@views.route('/edit-note/<int:note_id>', methods=['GET', 'POST'])
+@login_required
+def edit_note(note_id):
+    note = Note.query.get(note_id)
+
+    if current_user.id != note.user_id:
+        return render_template("error.html", message="Unauthorized to edit note")
+
+    if request.method == 'POST':
+        new_data = request.form.get('note')
+
+        if len(new_data.strip()) > 0:
+            note.data = new_data
+            db.session.commit()
+            flash('Note updated!', category='success')
+            return redirect(url_for('views.home'))  # Redirect to home page after editing
+        else:
+            flash('Note is too short!', category='error')
+
+    return render_template("edit_note.html",user=current_user, note=note)  # Render edit note template
+
 
 @views.route('/delete-note', methods=['POST'])
 def delete_note():
