@@ -92,10 +92,12 @@ The Flask Note Taking Application offers a simple yet effective solution for man
     ```
 - Install all the required dependencies
     ```
+    cd src
     pip install -r requirement.txt
     ```
 - Run the Flask Application:
     ```
+    cd src
     flask run
     ```
 - Open your web browser and go to http://localhost:5000 to access the application.
