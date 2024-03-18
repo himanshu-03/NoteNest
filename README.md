@@ -96,7 +96,6 @@ The Flask Note Taking Application offers a simple yet effective solution for man
     ```
 - Run the Flask Application:
     ```
-    cd src
     flask run
     ```
 - Open your web browser and go to http://localhost:5000 to access the application.
